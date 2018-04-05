@@ -2,15 +2,15 @@
 
 Customer Care operates as an Amazon Alexa Skill created by Arpit Agarwal under BootStrap LLC. It is our responsibility to respect your privacy regarding any information we may collect while operating.
 
-We use your Personal Information only to provide a personalized user experience. By enabling the skill, you agree to use of information in accordance with this policy.
+We may use your Personal Information only to provide a personalized user experience. By enabling the skill, you agree to use of information in accordance with this policy.
 
 **Gathering of Personally-Identifying Information**
 
-Certain users to Customer Care’s skill may choose to interact in ways that require this skill to gather personally-identifying information in future. The amount and type of information that the skill may gather depends on the nature of the interaction. We do not disclose personally-identifying information other than as described below. And users can always refuse to supply personally-identifying information by not disabling the skill.
+At present the skill doesn't collect any personally identifying user information. But in future certain users to Customer Care’s skill may choose to interact in ways that require this skill to gather personally-identifying information in future. The amount and type of information that the skill may gather depends on the nature of the interaction. We do not disclose personally-identifying information other than as described below. And users can always refuse to supply personally-identifying information by not disabling the skill.
 
 **Information We Collect from Other Sources**
 
-With your authorization, we also obtain information about you from other sources. When you link your account to any third party services, we will receive information from that service (such as your birthday) via an API call to that service.
+With your authorization, we might also obtain information about you from other sources in future. When you link your account to any third party services, we will receive information from that service (such as your birthday) via an API call to that service.
 
 **Data Retention Policy**
 

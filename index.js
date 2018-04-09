@@ -81,10 +81,16 @@ const handlers = {
             let speechOutput = GET_DETAIL_MESSAGE + brand + " customer care";
             let alexa = this;
             let displayoutput = speechOutput;
-            storage.getConatct(brand,function(contact){
-                if(contact){
-                    displayoutput += contact;
-                    speechOutput += '<break time = \'1s\' />' + spellDigitOutput(contact);
+            storage.getCSInfo(brand,function(csinfo){
+                if(csinfo){
+                    displayoutput += "\n Contact: " + csinfo.contact;
+                    if(csinfo.email != "unavailable")
+                        displayoutput += "\n Email: " + csinfo.email;
+                    if(csinfo.ophrsstart == csinfo.ophrsend)
+                        displayoutput += "\n Operational Hours:  24x7";
+                    else
+                        displayoutput += "\n Operational Hours: " + csinfo.ophrsstart + ":00 hrs -- " + csinfo.ophrsend + ":00 hrs";
+                    speechOutput += '<break time = \'1s\' />' + spellDigitOutput(csinfo.contact);
                 }else{
                     speechOutput = BRAND_NOT_SUPPORTED + slotValues.brand.resolved + ' available as of now .';
                     displayoutput = speechOutput;
@@ -121,7 +127,7 @@ const slotsMeta = {
 var storage = (function(){
     var dynamodb = new AWS.DynamoDB.DocumentClient();
     return{
-    getConatct: function(brandId, callback) {
+    getCSInfo: function(brandId, callback) {
         var params = {
             TableName: "ccinfo",
             Key: {
@@ -140,8 +146,7 @@ var storage = (function(){
                     }else{
                         // found contact
                         console.log(data);
-                        console.log(data.Item.contact);
-                        callback(data.Item.contact);
+                        callback(data.Item);
                     }
                 }
             });
